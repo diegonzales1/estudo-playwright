@@ -1,7 +1,7 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 
-test('Login com sucesso', async ({ page }) => {
+test('Login com sucesso @screenshotTestTag', async ({ page }) => {
   await page.goto('https://automationpratice.com.br/');
 
   await page.getByRole('link', { name: ' Login' }).click();
@@ -16,8 +16,5 @@ test('Login com sucesso', async ({ page }) => {
 
   await page.getByRole('button', { name: 'OK' }).click();
 
-  await page.getByRole('link', { name: 'Shop ' }).click();
-  await page.getByRole('link', { name: 'Shop Four Grid' }).click();
-  await page.getByRole('button', { name: 'Add to cart' }).click();
+  await page.screenshot({ path: 'screenshot/login-sucesso.png' });
 });
-
